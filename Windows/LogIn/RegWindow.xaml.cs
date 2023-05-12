@@ -75,5 +75,11 @@ namespace Kingsman.Windows
 
         }
 
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            var autWindow = new AutWindow();
+            autWindow.Show();
+            this.Close();
+        }
     }  
 }

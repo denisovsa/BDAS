@@ -31,7 +31,7 @@
                 Background="{x:Null}"
                 BorderThickness="0"
                 Click="BtnGoToCart_Click">
-            <!--<Image Source="/Res/icons8-shopping-cart-30.png" />-->
+            <Image Source="/Image/Icon/icons8-shopping-cart-30.png" />
         </Button>
 
 
@@ -60,17 +60,17 @@
                                    Margin="8">
                                 <Image.Source>
                                     <Binding Path ="Image">
-                                        <!--<Binding.TargetNullValue>
-                                            <ImageSource>/Res/defImg.jpeg</ImageSource>
-                                        </Binding.TargetNullValue>-->
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/Image/Icon/defImg.jpeg</ImageSource>
+                                        </Binding.TargetNullValue>
                                     </Binding>
                                 </Image.Source>
                             </Image>
 
-                            <TextBlock Text="{Binding ServiceName}"
+                            <TextBlock Text="{Binding Name}"
                                        FontSize="18"
                                        Margin="5 3"/>
-                            <TextBlock Text="{Binding Price}"
+                            <TextBlock Text="{Binding Cost}"
                                        FontSize="18"
                                        Margin="5 3"/>
                             <TextBlock Text="{Binding Description}"
@@ -87,7 +87,7 @@
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnEdit_Click">
-                                    <!--<Image Source="/Res/icons8-edit-64.png"/>-->
+                                    <Image Source="/Image/Iconicons8-edit-64.png"/>
                                 </Button>
 
                                 <Button x:Name="BtnAddToCart"
@@ -98,7 +98,7 @@
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnAddToCart_Click">
-                                    <!--<Image Source="/Res/icons8-shopping-cart-30.png" />-->
+                                    <Image Source="/Image/Icon/icons8-shopping-cart-30.png" />
                                 </Button>
                             </WrapPanel>
 
@@ -119,7 +119,7 @@
                 HorizontalAlignment="Right"
                 Margin="0 0 20 0"
                 Click="BtnAddService_Click">
-            <!--<Image Source="/Res/icons8-add-80.png"/>-->
+            <Image Source="/Image/Icon/icons8-add-80.png"/>
         </Button>
     </Grid>
 </Window>

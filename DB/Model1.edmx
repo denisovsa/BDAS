@@ -11,7 +11,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="char" MaxLength="11" />
@@ -74,6 +74,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="ServiceID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -100,7 +101,8 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
-          <Property Name="ServiceTypeID" Type="int" Nullable="false" />
+          <Property Name="ServiceTypeID" Type="int" />
+          <Property Name="Image" Type="image" />
         </EntityType>
         <EntityType Name="ServiceType">
           <Key>
@@ -264,7 +266,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Service_ServiceType">
-          <End Role="ServiceType" Type="Self.ServiceType" Multiplicity="1" />
+          <End Role="ServiceType" Type="Self.ServiceType" Multiplicity="0..1" />
           <End Role="Service" Type="Self.Service" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ServiceType">
@@ -519,7 +521,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
@@ -597,6 +599,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="ServiceID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="KingsmanModel.FK_OrderService_Order" FromRole="OrderService" ToRole="Order" />
           <NavigationProperty Name="Service" Relationship="KingsmanModel.FK_OrderService_Service1" FromRole="OrderService" ToRole="Service" />
         </EntityType>
@@ -626,7 +629,8 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="ServiceTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ServiceTypeID" Type="Int32" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="MaterialService" Relationship="KingsmanModel.FK_MaterialService_Service" FromRole="Service" ToRole="MaterialService" />
           <NavigationProperty Name="OrderService" Relationship="KingsmanModel.FK_OrderService_Service1" FromRole="Service" ToRole="OrderService" />
           <NavigationProperty Name="ServiceType" Relationship="KingsmanModel.FK_Service_ServiceType" FromRole="Service" ToRole="ServiceType" />
@@ -810,7 +814,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Service_ServiceType">
-          <End Type="KingsmanModel.ServiceType" Role="ServiceType" Multiplicity="1" />
+          <End Type="KingsmanModel.ServiceType" Role="ServiceType" Multiplicity="0..1" />
           <End Type="KingsmanModel.Service" Role="Service" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ServiceType">
@@ -934,6 +938,7 @@
           <EntitySetMapping Name="OrderService">
             <EntityTypeMapping TypeName="KingsmanModel.OrderService">
               <MappingFragment StoreEntitySet="OrderService">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -962,6 +967,7 @@
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="KingsmanModel.Service">
               <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />

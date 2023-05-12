@@ -25,7 +25,8 @@ namespace Kingsman.DB
         public string Name { get; set; }
         public decimal Cost { get; set; }
         public string Description { get; set; }
-        public int ServiceTypeID { get; set; }
+        public Nullable<int> ServiceTypeID { get; set; }
+        public byte[] Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialService> MaterialService { get; set; }

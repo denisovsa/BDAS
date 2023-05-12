@@ -204,7 +204,7 @@
                 BorderThickness="0,0,0,0" 
                 FontSize="8" 
                 FontFamily="Tahoma" 
-                Focusable="False"
+                Focusable="False" Click="SignIn_Click"
                 />
                 
 
