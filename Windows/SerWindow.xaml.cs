@@ -81,5 +81,18 @@ namespace Kingsman.Windows.LogIn
             cartWindow.ShowDialog();
         }
 
+        private void BtnClient_Click(object sender, RoutedEventArgs e)
+        {
+            ClientWindow clienttWindow = new ClientWindow();
+            clienttWindow.ShowDialog();
+        }
+
+        private void BtnEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeWindow employeeWindow = new EmployeeWindow();
+            employeeWindow.ShowDialog();
+        }
+
+
     }
 }

@@ -8,7 +8,7 @@
         Title="CartWindow"         
         Height="768" Width="1024"
         WindowStartupLocation="CenterScreen">
-<Grid>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -96,7 +96,7 @@
                 BorderThickness="0"
                 HorizontalAlignment="Left"
                 Click="BtnBack_Click">
-            
+
         </Button>
 
         <Button x:Name="BtnPay"
@@ -110,7 +110,9 @@
                 Margin="0 0 20 0"
                 HorizontalAlignment="Right"
                 Click="BtnPay_Click">
-
         </Button>
+
+
+
     </Grid>
 </Window>

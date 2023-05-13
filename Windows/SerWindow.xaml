@@ -121,5 +121,34 @@
                 Click="BtnAddService_Click">
             <Image Source="/Image/Icon/icons8-add-80.png"/>
         </Button>
+
+
+        <Button x:Name="BtnClient"
+                Content="Клиенты"
+                FontSize="18"
+                Grid.Row="3"
+                Width="140"
+                Height="40"
+                Background="{x:Null}"
+                BorderThickness="0"
+                Margin="0,5,0,5"
+                HorizontalAlignment="Left"
+                Click="BtnClient_Click">
+        </Button>
+        
+        
+        <Button x:Name="BtnEmployee"
+                Content="Сотрудники"
+                FontSize="18"
+                Grid.Row="3"
+                Width="140"
+                Height="40"
+                Background="{x:Null}"
+                BorderThickness="0"
+                Margin="145,5,0,5"
+                HorizontalAlignment="Left"
+                Click="BtnEmployee_Click">
+        </Button>
+
     </Grid>
 </Window>
